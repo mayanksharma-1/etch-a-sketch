@@ -54,6 +54,7 @@ cells.forEach(cell => {
       })
     cell.addEventListener("click", (event) => {
         event.target.style.backgroundColor = selectedColor;
+        currentColor = selectedColor;
       });
     });
 
