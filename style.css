@@ -1,0 +1,39 @@
+
+.header{
+    background-color: #ffe4c4;
+
+}
+.main{
+    display: flex;
+    flex-grow: 1;
+}
+.tools{
+    flex-grow: 0.01;
+    flex-shrink: 2;
+    flex-basis: 75px;
+    background-color: rgb(255, 200, 117);
+    border: solid black;
+}
+.draw{
+    flex: 1;
+    flex-shrink: 1;
+    background-color: azure;
+    display: flex;
+    border: solid black;
+}
+.row{
+    /* flex-shrink: 1; */
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+.cell{
+    flex-grow: 1;
+    border: solid black;
+    height: 50px;
+    /* width: 75px; */
+    flex-shrink: 1;
+    flex-basis: 75px;
+    /* margin: 0;
+    padding: 0; */
+}
