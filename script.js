@@ -37,6 +37,7 @@ let toolbar = document.querySelector(".toolbar");
 let tools = setupTools(toolbar);
 
 let selectedColor = "red";
+let currentColor = "azure";
 tools.forEach(tool=>{
     tool.addEventListener("click", (event) => {
          selectedColor = event.target.style.backgroundColor; 
@@ -44,6 +45,13 @@ tools.forEach(tool=>{
 })
 
 cells.forEach(cell => {
+    cell.addEventListener("mouseover",(event) => {
+        currentColor = event.target.style.backgroundColor;
+        event.target.style.backgroundColor = selectedColor;
+      });
+      cell.addEventListener("mouseout",(event)=>{
+        event.target.style.backgroundColor = currentColor;
+      })
     cell.addEventListener("click", (event) => {
         event.target.style.backgroundColor = selectedColor;
       });
