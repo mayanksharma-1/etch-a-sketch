@@ -16,7 +16,7 @@ function makeGrid(grid){
 }
 
 function setupTools(bar){
-    const colors = ["red","yellow","blue","green","black","white"]
+    const colors = ["red","yellow","blue","green","white","azure","black"]
     const row = document.createElement('div');
     row.classList.add("row")
     colors.forEach(color => {
@@ -36,9 +36,16 @@ let cells = makeGrid(draw);
 let toolbar = document.querySelector(".toolbar");
 let tools = setupTools(toolbar);
 
+let selectedColor = "red";
+tools.forEach(tool=>{
+    tool.addEventListener("click", (event) => {
+         selectedColor = event.target.style.backgroundColor; 
+      });
+})
+
 cells.forEach(cell => {
     cell.addEventListener("click", (event) => {
-        event.target.style.backgroundColor = 'red';
+        event.target.style.backgroundColor = selectedColor;
       });
     });
 
