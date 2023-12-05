@@ -12,13 +12,30 @@ function makeGrid(grid){
         grid.appendChild(row);
     }
 
-    return document.querySelectorAll(".cell");
+    return document.querySelectorAll(".draw .cell");
 }
 
+function setupTools(bar){
+    const colors = ["red","yellow","blue","green","black","white"]
+    const row = document.createElement('div');
+    row.classList.add("row")
+    colors.forEach(color => {
+        const cell = document.createElement('div');
+        cell.classList.add("cell");
+        cell.id = `cell-color-${color}`;
+        cell.style.backgroundColor = color;
+        row.appendChild(cell);
+    });
+    bar.appendChild(row)
+    return document.querySelectorAll(".toolbar .cell")
+}
 
 let draw = document.querySelector(".draw");
-
 let cells = makeGrid(draw);
+
+let toolbar = document.querySelector(".toolbar");
+let tools = setupTools(toolbar);
+
 cells.forEach(cell => {
     cell.addEventListener("click", (event) => {
         event.target.style.backgroundColor = 'red';
