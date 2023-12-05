@@ -19,5 +19,9 @@ function makeGrid(grid){
 let draw = document.querySelector(".draw");
 
 let cells = makeGrid(draw);
-
+cells.forEach(cell => {
+    cell.addEventListener("click", (event) => {
+        event.target.style.backgroundColor = 'red';
+      });
+    });
 
